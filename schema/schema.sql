@@ -1,4 +1,4 @@
-USE music_shop_db;
+CREATE DATABASE IF NOT EXISTS music_shop_db;
 
 CREATE TABLE inventory (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -23,7 +23,7 @@ CREATE TABLE cart (
   FOREIGN KEY (inventory_id)
     REFERENCES inventory (id)
     ON DELETE CASCADE,
-    
+
   user_id INT NOT NULL, 
   FOREIGN KEY (user_id) REFERENCES users(id)
     ON DELETE CASCADE ON UPDATE CASCADE
